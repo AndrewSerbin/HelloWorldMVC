@@ -13,7 +13,6 @@ public class Model {
      * @return string
      */
     public String createString() {
-
         return firstPart + secondPart;
     }
 

@@ -18,7 +18,6 @@ public class Controller {
     View view;
 
     public Controller(Model model, View view) {
-
         this.model  = model;
         this.view = view;
     }
@@ -28,7 +27,6 @@ public class Controller {
      * Sends to View Model answer.
      */
     public void processUser(){
-
         Scanner sc = new Scanner(System.in);
 
         model.setFirstPart(inputStringValueWithScanner(sc, HELLO));
@@ -46,13 +44,12 @@ public class Controller {
      * @return string
      */
     public String inputStringValueWithScanner(Scanner sc, String expectedString) {
-
         view.printMessage(view.EXPECTED_STRING + expectedString);
         view.printMessage(view.INPUT_DATA);
 
         while(!sc.hasNext(expectedString)) {
-
             view.printMessage(view.WRONG_INPUT + view.INPUT_DATA);
+
             sc.next();
         }
 
