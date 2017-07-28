@@ -42,11 +42,11 @@ public class Controller {
      * @return string
      */
     public String inputStringValueWithScanner(Scanner sc, String expectedString) {
-        view.printMessage(ViewConstants.EXPECTED_STRING + expectedString);
+        view.printMessage(ViewConstants.EXPECTED_STRING, expectedString);
         view.printMessage(ViewConstants.INPUT_DATA);
 
         while(!sc.hasNext(expectedString)) {
-            view.printMessage(ViewConstants.WRONG_INPUT + ViewConstants.INPUT_DATA);
+            view.printMessage(ViewConstants.WRONG_INPUT, ViewConstants.INPUT_DATA);
 
             sc.next();
         }

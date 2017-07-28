@@ -12,4 +12,19 @@ public class View {
     public void printMessage(String message){
         System.out.println(message);
     }
+
+    /**
+     * Concat and prints message in console.
+     * @param messages
+     */
+    public void printMessage(String... messages) {
+        StringBuilder builder = new StringBuilder();
+
+        for (String message :
+                messages) {
+            builder.append(message);
+        }
+
+        System.out.println(builder);
+    }
 }
