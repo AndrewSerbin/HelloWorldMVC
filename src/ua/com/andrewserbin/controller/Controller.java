@@ -2,16 +2,14 @@ package ua.com.andrewserbin.controller;
 
 import ua.com.andrewserbin.model.Model;
 import ua.com.andrewserbin.view.View;
+import ua.com.andrewserbin.view.ViewConstants;
+
 import java.util.Scanner;
 
 /**
  * Created by admin on 17.07.2017.
  */
 public class Controller {
-
-    // Data for validation
-    public static final String HELLO = "Hello";
-    public static final String WORLD = ",world!";
 
     // Constructor
     Model model;
@@ -29,8 +27,8 @@ public class Controller {
     public void processUser(){
         Scanner sc = new Scanner(System.in);
 
-        model.setFirstPart(inputStringValueWithScanner(sc, HELLO));
-        model.setSecondPart(inputStringValueWithScanner(sc, WORLD));
+        model.setFirstPart(inputStringValueWithScanner(sc, ControllerConstants.HELLO));
+        model.setSecondPart(inputStringValueWithScanner(sc, ControllerConstants.WORLD));
 
         view.printMessage(model.createString());
     }
@@ -44,11 +42,11 @@ public class Controller {
      * @return string
      */
     public String inputStringValueWithScanner(Scanner sc, String expectedString) {
-        view.printMessage(view.EXPECTED_STRING + expectedString);
-        view.printMessage(view.INPUT_DATA);
+        view.printMessage(ViewConstants.EXPECTED_STRING + expectedString);
+        view.printMessage(ViewConstants.INPUT_DATA);
 
         while(!sc.hasNext(expectedString)) {
-            view.printMessage(view.WRONG_INPUT + view.INPUT_DATA);
+            view.printMessage(ViewConstants.WRONG_INPUT + ViewConstants.INPUT_DATA);
 
             sc.next();
         }
