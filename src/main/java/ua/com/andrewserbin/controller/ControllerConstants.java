@@ -3,9 +3,9 @@ package ua.com.andrewserbin.controller;
 /**
  * Created by admin on 28.07.2017.
  */
-public class ControllerConstants {
+public interface ControllerConstants {
 
     // Data for validation
-    public static final String HELLO = "Hello";
-    public static final String WORLD = ",world!";
+    String HELLO = "Hello";
+    String WORLD = ",world!";
 }
