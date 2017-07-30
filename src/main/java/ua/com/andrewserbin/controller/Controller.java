@@ -42,15 +42,20 @@ public class Controller {
      * @return string
      */
     public String inputStringValueWithScanner(Scanner sc, String expectedString) {
-        view.printMessage(ViewConstants.EXPECTED_STRING, expectedString);
-        view.printMessage(ViewConstants.INPUT_DATA);
+        view.printMessage(getMessageFromBundle(ViewConstants.EXPECTED_STRING), expectedString);
+        view.printMessage(getMessageFromBundle(ViewConstants.INPUT_DATA));
 
         while(!sc.hasNext(expectedString)) {
-            view.printMessage(ViewConstants.WRONG_INPUT, ViewConstants.INPUT_DATA);
+            view.printMessage(getMessageFromBundle(ViewConstants.WRONG_INPUT),
+                    getMessageFromBundle(ViewConstants.INPUT_DATA));
 
             sc.next();
         }
 
         return sc.next();
+    }
+
+    private String getMessageFromBundle(String propertyName) {
+        return view.getBundle().getString(propertyName);
     }
 }
